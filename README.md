@@ -18,55 +18,58 @@ Databrydge is a company which facilitates connections through the clever use of 
 - [ ] Create a docker container, running the following services:
 	- PHP Server with Symfony (`PHP 8.1` & `Symfony 6.1`)
 	- MongoDB (`MongoDB 6.0`)
-- [ ] Make sure the `export.csv` file from this repository is in your symfony project folder
-- [ ] Create a homepage with a button -> `Read Data`
+- [ ] Make sure the `Transactions_batch1.csv` file from this repository is in your symfony project folder
+- [ ] Create a homepage with a button -> `Read data`
 - [ ] When the button is clicked, the symfony application should do the following:
-	- [ ] Read out the `.csv` data and group the lines by journal_id (see table for explanation below)
-	- [ ] Create with the result data set the following **model** (`journalBooking`) : 
-		- journalId (from `Journal_id`)
-		- journalLines: (array holding following items)
-			- code (from `Account_code`)
-			- transactionFee (from `Debit` or `Credit`)
-			- transactionType (if transactionFee -> `Debit` then transactionType = `Debit` otherwise transactionType = `Credit`)
-			- transactionDate (from `Booked_at` convert to MongoDB Date object)
+	- [ ] Read out the `.csv` data and group the lines by Transaction_id (see table for explanation below)
+	- [ ] Create with the result data set the following **model** (`salesTransaction`) : 
+		- transactionId (from `Transaction_id`)
+		- customerId (from `Customer_id`)
+		- transactionLines: (array holding following items)
+			- generalLedgerAccountId (from `General_ledger_account_id`)
+			- amount (from `Debit` or `Credit`)
+			- type (if amount -> `Debit` then transactionType = `Debit` otherwise transactionType = `Credit`)
+			- date (from `Transaction_date` convert to MongoDB Date object)
 	- [ ] Save the `.csv` data through use of the mentioned **model** to the MongoDB
-- [ ] Make a simple table element on the homepage where you list the database entries
-- [ ] Make the journalId clickable and make it navigate to a detailed page of the single database entry
+- [ ] Make a simple table element on the homepage where you list the database salesTransactions
+- [ ] Make the transactionId clickable and make it navigate to a detailed page of the single database entry
 - [ ] On this details page, list the object in it's entirety in a `<pre>` block in `json` format
 - [ ] Making use of the `symfony/serializer` component grants bonus points! :wink:
 
 ### CSV Data
 
 
-|Id|Journal_id|Account_code|Debit|Credit|Booked_at|
-|--|----------|------------|-----|------|---------|
-|20000|1110|XOQ97XWG4RB|$39.90|0|946637999|
-|20001|1110|USF81BTC6TI|0|$39.90|946637999|
-|20002|1111|XOQ97XWG4RB|$47.50|0|1591669200|
-|20003|1112|XXA44JDI0OQ|0|$47.50|1591669200|
-|20004|1112|XXA44JDI0OQ|$84.36|0|673308000|
-|20005|1112|USF81BTC6TI|0|$0.666|673308000|
-|20006|1112|XXA44JDI0OQ|$23.84|0|773486580|
-|20007|1113|USF81BTC6TI|0|$23.84|773486580|
-|20008|1113|FAKEACCOUNT|$60.70|0|773486580|
+|Batch_id|Transaction_id|Customer_id|General_ledger_account_id|Debit|Credit|Transaction_date|
+|--|--|----------|------------|-----|------|---------|
+|1|2270001|C1000|1300|$39.90|0|946637999|
+|1|2270001|C1000|8000|0|$39.90|946637999|
+|1|2270002|C1001|1300|$47.50|0|1591669200|
+|1|2270002|C1001|8001|0|$45.50|1591669200|
+|1|2270002|C1001|8002|$2.00|0|1591669200|
+|1|2270003|C1002|1300|0|$51.00|673308000|
+|1|2270003|C1002|8001|$51.00|0|673308000|
+|1|2270004|C1000|1300|$23.84|0|773486580|
+|1|2270004|C1000|8000|0|$23.84|773486580|
+
 
 
 **Model Example**:
 ```json
 {
-	"journalId": 1110,
+	"transactionId": 2270001,
+	"customerId":"C1000",
 	"journalLines": [
 		{
-			"code":"XOQ97XWG4RB",
-			"transactionFee": "$39.9",
-			"transactionType": "Debit",
-			"transactionDate": "1999-12-31T23:59:59.000+00:00"
+			"generalLedgerAccountId":"1300",
+			"amount": "$39.90",
+			"type": "Debit",
+			"date": "1999-12-31T23:59:59.000+00:00"
 		},
 		{
-			"code":"USF81BTC6TI",
-			"transactionFee": "$39.9",
-			"transactionType": "Credit",
-			"transactionDate": "1999-12-31T23:59:59.000+00:00"
+			"generalLedgerAccountId":"8000",
+			"lineAmount": "$39.90",
+			"lineType": "Credit",
+			"lineDate": "1999-12-31T23:59:59.000+00:00"
 		}		
 	]
 }
