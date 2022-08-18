@@ -24,11 +24,11 @@ Databrydge is a company which facilitates connections through the clever use of 
 	- [ ] Read out the `.csv` data and group the lines by journal_id (see table for explanation below)
 	- [ ] Create with the result data set the following **model** (`journalBooking`) : 
 		- journalId (from `Journal_id`)
-		- journalTransactionDate (from `Booked_at` convert to MongoDB Date object)
 		- journalLines: (array holding following items)
 			- code (from `Account_code`)
 			- transactionFee (from `Debit` or `Credit`)
 			- transactionType (if transactionFee -> `Debit` then transactionType = `Debit` otherwise transactionType = `Credit`)
+			- transactionDate (from `Booked_at` convert to MongoDB Date object)
 	- [ ] Save the `.csv` data through use of the mentioned **model** to the MongoDB
 - [ ] Make a simple table element on the homepage where you list the database entries
 - [ ] Make the journalId clickable and make it navigate to a detailed page of the single database entry
@@ -55,17 +55,18 @@ Databrydge is a company which facilitates connections through the clever use of 
 ```json
 {
 	"journalId": 1110,
-	"journalTransactionDate": "1999-12-31T23:59:59.000+00:00",
 	"journalLines": [
 		{
 			"code":"XOQ97XWG4RB",
 			"transactionFee": "$39.9",
 			"transactionType": "Debit",
+			"transactionDate": "1999-12-31T23:59:59.000+00:00"
 		},
 		{
 			"code":"USF81BTC6TI",
 			"transactionFee": "$39.9",
 			"transactionType": "Credit",
+			"transactionDate": "1999-12-31T23:59:59.000+00:00"
 		}		
 	]
 }
