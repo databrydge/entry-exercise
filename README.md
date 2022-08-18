@@ -1,4 +1,4 @@
-# Databrydge Sales Transactions Exercise
+# Databrydge Applicant's Exercise
 ### Intro
 Databrydge is a company which facilitates connections through the clever use of API's, Proprietary models, serialization engine and much more. This exercise will test you on some of these features.
 
@@ -18,7 +18,7 @@ Databrydge is a company which facilitates connections through the clever use of 
 - [ ] Create a docker container, running the following services:
 	- PHP Server with Symfony (`PHP 8.1` & `Symfony 6.1`)
 	- MongoDB (`MongoDB 6.0`)
-- [ ] Make sure the `Transactions_batch1.csv` file from this repository is in your symfony project folder
+- [ ] Make sure the `transactionBatch.csv` file from this repository is in your symfony project folder
 - [ ] Create a homepage with a button -> `Read data`
 - [ ] When the button is clicked, the symfony application should do the following:
 	- [ ] Read out the `.csv` data and group the lines by Transaction_id (see table for explanation below)
