@@ -1,4 +1,4 @@
-# Databrydge Entry Exercise
+# Databrydge Sales Transactions Exercise
 ### Intro
 Databrydge is a company which facilitates connections through the clever use of API's, Proprietary models, serialization engine and much more. This exercise will test you on some of these features.
 
