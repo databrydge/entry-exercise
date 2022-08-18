@@ -58,7 +58,7 @@ Databrydge is a company which facilitates connections through the clever use of 
 {
 	"transactionId": 2270001,
 	"customerId":"C1000",
-	"journalLines": [
+	"transactionLines": [
 		{
 			"generalLedgerAccountId":"1300",
 			"amount": "$39.90",
@@ -69,7 +69,7 @@ Databrydge is a company which facilitates connections through the clever use of 
 			"generalLedgerAccountId":"8000",
 			"lineAmount": "$39.90",
 			"lineType": "Credit",
-			"lineDate": "1999-12-31T23:59:59.000+00:00"
+			"date": "1999-12-31T23:59:59.000+00:00"
 		}		
 	]
 }
