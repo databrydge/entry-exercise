@@ -5,16 +5,16 @@ Databrydge is a company which facilitates connections through the clever use of 
 -----
 
 ### Practical Guidelines 
-- You have an infinite amount of time to finish this exercise
-- You can follow the build instructions to the letter but you are also allowed to deviate from the process, as long as the result is the same
-- Build what you can build, skip what you can't, any % of completion is better than 0.
-- Build the exercise in Git and share the repository with us when done
-- Any comments or things we should know, can be shared with us in the readme of your repository
-- Use of composer packages is allowed! Why re-invent the wheel right?
+- You have an infinite amount of time to finish this exercise,
+- You can follow the build instructions to the letter but you are also allowed to deviate from the process, as long as the result is the same,
+- Build what you can build, skip what you can't, any % of completion is better than 0,
+- Build the exercise in Git and share the repository with us when done,
+- Any comments or things we should know, can be shared with us in the readme of your repository,
+- Use of composer packages is allowed! Why re-invent the wheel right?,
 
 
 ### Technical Requirements
-- [ ] Fork this git repository
+- [ ] Fork this git repository,
 - [ ] Create a docker container, running the following services:
 	- PHP Server with Symfony (`PHP 8.1` & `Symfony 6.1`)
 	- MongoDB (`MongoDB 6.0`)
