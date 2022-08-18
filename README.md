@@ -28,7 +28,7 @@ Databrydge is a company which facilitates connections through the clever use of 
 			- code (from `Account_code`)
 			- transactionFee (from `Debit` or `Credit`)
 			- transactionType (if transactionFee -> `Debit` then transactionType = `Debit` otherwise transactionType = `Credit`)
-			- transactionDate (from `Booked_at` convert to timestamp)
+			- transactionDate (from `Booked_at` convert to MongoDB Date object)
 	- [ ] Save the `.csv` data through use of the mentioned **model** to the MongoDB
 - [ ] Make a simple table element on the homepage where you list the database entries
 - [ ] Make the journalId clickable and make it navigate to a detailed page of the single database entry
@@ -60,13 +60,13 @@ Databrydge is a company which facilitates connections through the clever use of 
 			"code":"XOQ97XWG4RB",
 			"transactionFee": "$39.9",
 			"transactionType": "Debit",
-			"transactionDate": 1999-12-31T23:59:59.000+00:00 
+			"transactionDate": "1999-12-31T23:59:59.000+00:00"
 		},
 		{
 			"code":"USF81BTC6TI",
 			"transactionFee": "$39.9",
 			"transactionType": "Credit",
-			"transactionDate": 1999-12-31T23:59:59.000+00:00 
+			"transactionDate": "1999-12-31T23:59:59.000+00:00"
 		}		
 	]
 }
