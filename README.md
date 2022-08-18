@@ -16,12 +16,12 @@ Databrydge is a company which facilitates connections through the clever use of 
 ### Technical Requirements
 - [ ] Fork this git repository,
 - [ ] Create a docker container, running the following services:
-	- PHP Server with Symfony (`PHP 8.1` & `Symfony 6.1`)
-	- MongoDB (`MongoDB 6.0`)
+	- PHP Server with Symfony (PHP `8.1` & Symfony `6.1`)
+	- MongoDB (MongoDB `6.0`)
 - [ ] Make sure the `transactionBatch.csv` file from this repository is in your symfony project folder
-- [ ] Create a homepage with a button -> `Read data`
+- [ ] Create a homepage with a button -> "Read data"
 - [ ] When the button is clicked, the symfony application should do the following:
-	- [ ] Read out the `.csv` data and group the lines by Transaction_id (see table for explanation below)
+	- [ ] Read out the csv data and group the lines by Transaction_id (see table for explanation below)
 	- [ ] Create with the result data set the following **model** (`salesTransaction`) : 
 		- transactionId (from `Transaction_id`)
 		- customerId (from `Customer_id`)
@@ -30,7 +30,7 @@ Databrydge is a company which facilitates connections through the clever use of 
 			- amount (from `Debit` or `Credit`)
 			- type (if amount -> `Debit` then transactionType = `Debit` otherwise transactionType = `Credit`)
 			- date (from `Transaction_date` convert to MongoDB Date object)
-	- [ ] Save the `.csv` data through use of the mentioned **model** to the MongoDB
+	- [ ] Save the csv data through use of the mentioned **model** to the MongoDB
 - [ ] Make a simple table element on the homepage where you list the database salesTransactions
 - [ ] Make the transactionId clickable and make it navigate to a detailed page of the single database entry
 - [ ] On this details page, list the object in it's entirety in a `<pre>` block in `json` format
