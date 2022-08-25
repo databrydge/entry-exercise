@@ -79,3 +79,22 @@ Databrydge is a company which facilitates connections through the clever use of 
 
 That's all folks!
 Good luck! If you finish this entire exercise you've definitely earned yourself a :cookie: or two :wink:
+
+
+
+------
+
+
+
+
+
+..... Too easy for you? 😠 Would you like a challenge?
+- [ ] Add an upload functionality so any csv with the same formatting can be uploaded to your symfony server
+- [ ] Add in a crud system for the entries, using symfony's API-Platform component, make an entry into an ApiResource
+- [ ] Remove MongoDB, instead use relational MySQL tables each with their own models
+- [ ] Add FK, Dependancies and let them be reflected in the Models
+- [ ] Use Symfony Messenger component to read out tasks from a newly added RabbitMQ Queue in your docker
+- [ ] Add files that were uploaded into a new queue called "tooEasy" and process them
+- [ ] Add a duplicate check for files and the data within, gone with those pesky duplicated rows!
+- [ ] Make the API Platform of symfony reachable with an OAuth flow in your symfony environment
+- [ ] Add in a logging system, whenever anything goes wrong or something goes right, log it to a SQL table and allow for a page to list, detail & remove the logs!
